@@ -25,3 +25,39 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+** whenever we run angular project first file that runs is main.ts **
+
+
+folder structure
+package.json
+        dependencies: packages required by user to build the project.
+
+        devdepencies: packages required by user to locally run angular project.
+
+angular.json 
+            angular project ka setting ya config ka file
+
+
+style.css
+        global css
+
+tsconfig.json
+            typescript related setting
+src
+        index.html : this is the page that always run <body><app-root></app-root></body> this has all the content of our project
+
+        main.js : first program that bootstrap runs appComponent and appconfig
+
+
+ng genrate component name
+html 
+css 
+ts
+spec.ts //ignore
+
+
+data binding
+                one way data binding
+                        sending data from html to ts or ts to html
