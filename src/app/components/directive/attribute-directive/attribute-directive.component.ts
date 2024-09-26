@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-attribute-directive',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,RouterLink],
   templateUrl: './attribute-directive.component.html',
   styleUrl: './attribute-directive.component.css'
 })
@@ -21,6 +22,7 @@ export class AttributeDirectiveComponent {
   toggleDiv2Class(){
     this.isDiv2Active = !this.isDiv2Active;
   }
+  
   customStyle:any = {
     'color':"white",
     'background-color':'red',
@@ -28,6 +30,9 @@ export class AttributeDirectiveComponent {
     'height':'200px',
     'border-radius':'10%',
   };
+  navigateToAttribute(){
+
+  }
   num1: string = "";
   num2: string = "";
   isActive:boolean = false;
