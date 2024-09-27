@@ -5,6 +5,8 @@ import { EmployeelistComponent } from './components/employeelist/employeelist.co
 import { StructuralDirectiveComponent } from './components/directive/structural-directive/structural-directive.component';
 import { AttributeDirectiveComponent } from './components/directive/attribute-directive/attribute-directive.component';
 import { IfelseComponent } from './components/controlFlow/ifelse/ifelse.component';
+import { ForComponent } from './components/controlFlow/for/for.component';
+import { PipeComponent } from './components/pipe/pipe.component';
 
 export const routes: Routes = [
     {
@@ -22,6 +24,14 @@ export const routes: Routes = [
     {
         path:'if-else',
         component: IfelseComponent
+    },
+    {
+        path:'for',
+        component: ForComponent
+    },
+    {
+    path:'pipe',
+        component: PipeComponent
     },
     {
         path:'structural-dir',
