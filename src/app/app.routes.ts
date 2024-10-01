@@ -7,6 +7,7 @@ import { AttributeDirectiveComponent } from './components/directive/attribute-di
 import { IfelseComponent } from './components/controlFlow/ifelse/ifelse.component';
 import { ForComponent } from './components/controlFlow/for/for.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+import { TemplateComponent } from './components/forms/template/template.component';
 
 export const routes: Routes = [
     {
@@ -36,6 +37,10 @@ export const routes: Routes = [
     {
         path:'structural-dir',
         component: StructuralDirectiveComponent
+    },
+    {
+        path:'template-form',
+        component: TemplateComponent
     },
     {
         path:'attributedirective',
