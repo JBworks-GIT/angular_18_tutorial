@@ -2,8 +2,10 @@
     <h4>Post Api</h4>
     <h3>Create Department , Department List</h3>
 </div>
-
-
+<app-alert [message]="'Welcome to post page'" [alertType]="'Warning'"></app-alert>
+<br>
+<app-alert [message]="'Some error Occurred'" [alertType]="'Error'"></app-alert>
+<app-my-button (onBtnClick)="getData($event)" [btnClass]="'btn btn-success'" [btnText]="'Save Record'"></app-my-button>
 <div class="row pt-2">
     <div class="col-8">
         <div class="card">
@@ -23,16 +25,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                @for (item of deptList; track $index) {
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td> 
-                                        <button class="btn btn-primary" >Edit</button>
-                                        <!-- <button class="btn btn-danger" (click)="onDelete(item.departmentId)">Delete</button> -->
+                                    <td>{{$index +1}}</td>
+                                    <td>{{item.departmentName}}</td>
+                                    <td>{{item.departmentLogo}}</td>
+                                    <td><button class="btn btn-primary" (click)="clickOnEdit(item)">Edit</button>
+                                        <app-my-button (onBtnClick)="clickOnDelete(item.departmentId)" [btnClass]="'btn btn-danger'" [btnText]="'delete'"></app-my-button>
+                                    <!-- <td><button class="btn btn-danger" (click)="clickOnDelete(item.departmentId)">Delete</button></td> -->
                                     </td>
                                 </tr>
+                            }
 
                             </tbody>
                         </table>
@@ -52,12 +55,12 @@
                     <div class="col-12">
                         <label for="">Department Name</label>
                         <input type="text" class="form-control"
-                            placeholder="Enter Name">
+                            placeholder="Enter Name" [(ngModel)]="deptObj.departmentName">
                     </div>
                     <div class="col-12">
                         <label for="">Department Logo</label>
                         <input type="text" class="form-control"
-                            placeholder="Enter Logo Url">
+                            placeholder="Enter Logo Url"  [(ngModel)]="deptObj.departmentLogo">
                     </div>
                 </div>
                 <div class="row pt-3">
@@ -65,8 +68,13 @@
                         <button class="btn btn-secondary">Reset</button>
                     </div>
                     <div class="col-6 text-center"> 
-                            <button class="btn btn-success" >Save </button>
-                            <button class="btn btn-warning" >Update </button>
+                        {{deptObj | json}}
+                        @if (deptObj.departmentId == 0) {
+                            <button class="btn btn-success" (click)="onSave()" >Save </button>
+                        }
+                        @else {
+                            <button class="btn btn-warning" (click)="onUpdate()" >Update </button>
+                        }
                     </div>
                 </div>
             </div>
